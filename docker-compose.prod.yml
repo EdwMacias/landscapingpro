@@ -1,0 +1,69 @@
+services:
+  # Base de datos MongoDB
+  mongodb:
+    image: mongo:7
+    container_name: ddland-mongodb
+    restart: unless-stopped
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - ddland-network
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/ddland --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ddland-backend
+    restart: unless-stopped
+    ports:
+      - "8767:8767"
+    environment:
+      - PORT=8767
+      - NODE_ENV=production
+      - MONGODB_URI=mongodb://mongodb:27017/ddland
+      - JWT_SECRET=${JWT_SECRET}
+      - JWT_EXPIRE=7d
+      - CLOUDINARY_CLOUD_NAME=${CLOUDINARY_CLOUD_NAME}
+      - CLOUDINARY_API_KEY=${CLOUDINARY_API_KEY}
+      - CLOUDINARY_API_SECRET=${CLOUDINARY_API_SECRET}
+      - EMAIL_HOST=${EMAIL_HOST}
+      - EMAIL_PORT=${EMAIL_PORT}
+      - EMAIL_SECURE=${EMAIL_SECURE}
+      - EMAIL_USER=${EMAIL_USER}
+      - EMAIL_PASS=${EMAIL_PASS}
+      - EMAIL_FROM=${EMAIL_FROM}
+      - FRONTEND_URL=http://localhost:16262
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - ddland-network
+
+  # Frontend Vue.js
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        - VITE_API_URL=http://localhost:8767/api
+    container_name: ddland-frontend
+    restart: unless-stopped
+    ports:
+      - "16262:80"
+    depends_on:
+      - backend
+    networks:
+      - ddland-network
+
+networks:
+  ddland-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
