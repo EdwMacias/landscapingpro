@@ -17,10 +17,11 @@ export const useProjectsStore = defineStore('projects', () => {
     loading.value = true
     try {
       const response = await api.get('/projects', { params })
-      projects.value = response.data.data
-      pagination.value = response.data.pagination
+      projects.value = response.data?.data || []
+      pagination.value = response.data?.pagination || { page: 1, limit: 12, total: 0, pages: 0 }
       return { success: true }
     } catch (error) {
+      projects.value = []
       return { success: false, error: error.message }
     } finally {
       loading.value = false
@@ -44,10 +45,11 @@ export const useProjectsStore = defineStore('projects', () => {
     loading.value = true
     try {
       const response = await api.get('/projects/admin/all', { params })
-      projects.value = response.data.data
-      pagination.value = response.data.pagination
+      projects.value = response.data?.data || []
+      pagination.value = response.data?.pagination || { page: 1, limit: 12, total: 0, pages: 0 }
       return { success: true }
     } catch (error) {
+      projects.value = []
       return { success: false, error: error.message }
     } finally {
       loading.value = false

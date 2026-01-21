@@ -56,10 +56,12 @@ onMounted(async () => {
       api.get('/projects', { params: { featured: true, limit: 3 } }),
       api.get('/testimonials', { params: { featured: true, limit: 3 } })
     ])
-    featuredProjects.value = projectsRes.data.data
-    testimonials.value = testimonialsRes.data.data
+    featuredProjects.value = projectsRes.data?.data || []
+    testimonials.value = testimonialsRes.data?.data || []
   } catch (error) {
     console.error('Error loading data:', error)
+    featuredProjects.value = []
+    testimonials.value = []
   } finally {
     loading.value = false
   }

@@ -18,9 +18,10 @@ async function fetchGallery() {
     const params = {}
     if (selectedCategory.value) params.category = selectedCategory.value
     const response = await api.get('/gallery', { params })
-    images.value = response.data.data
+    images.value = response.data?.data || []
   } catch (error) {
     console.error('Error fetching gallery:', error)
+    images.value = []
   } finally {
     loading.value = false
   }

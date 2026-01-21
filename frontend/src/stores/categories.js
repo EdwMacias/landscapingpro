@@ -10,9 +10,10 @@ export const useCategoriesStore = defineStore('categories', () => {
     loading.value = true
     try {
       const response = await api.get('/categories')
-      categories.value = response.data.data
+      categories.value = response.data?.data || []
       return { success: true }
     } catch (error) {
+      categories.value = []
       return { success: false, error: error.message }
     } finally {
       loading.value = false
