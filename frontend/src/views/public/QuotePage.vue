@@ -20,30 +20,30 @@ const success = ref(false)
 const error = ref('')
 
 const serviceTypes = [
-  { value: 'landscaping', label: 'Paisajismo completo' },
-  { value: 'garden_design', label: 'Diseño de jardines' },
-  { value: 'lawn_care', label: 'Cuidado de césped' },
-  { value: 'irrigation', label: 'Sistema de riego' },
-  { value: 'hardscaping', label: 'Hardscaping (patios, caminos)' },
-  { value: 'tree_service', label: 'Servicio de árboles' },
-  { value: 'maintenance', label: 'Mantenimiento regular' },
-  { value: 'other', label: 'Otro' }
+  { value: 'general_maintenance', label: 'General Maintenance' },
+  { value: 'garden_design', label: 'Garden Design' },
+  { value: 'weed_control', label: 'Weed control and fertilization' },
+  { value: 'irrigation', label: 'Irrigation system' },
+  { value: 'hardscaping', label: 'Hardscaping' },
+  { value: 'tree_pruning', label: 'Tree pruning' },
+  { value: 'plant_pruning', label: 'Plant pruning' },
+  { value: 'other', label: 'Other' }
 ]
 
 const budgetOptions = [
-  { value: 'under_1000', label: 'Menos de $1,000' },
+  { value: 'under_1000', label: 'Under $1,000' },
   { value: '1000_5000', label: '$1,000 - $5,000' },
   { value: '5000_10000', label: '$5,000 - $10,000' },
   { value: '10000_25000', label: '$10,000 - $25,000' },
-  { value: 'over_25000', label: 'Más de $25,000' },
-  { value: 'not_sure', label: 'No estoy seguro' }
+  { value: 'over_25000', label: 'Over $25,000' },
+  { value: 'not_sure', label: "I'm not sure" }
 ]
 
 const timelineOptions = [
-  { value: 'asap', label: 'Lo antes posible' },
-  { value: '1_month', label: 'Dentro de 1 mes' },
-  { value: '3_months', label: 'Dentro de 3 meses' },
-  { value: '6_months', label: 'Dentro de 6 meses' },
+  { value: 'asap', label: 'As soon as possible' },
+  { value: '1_month', label: 'Within 1 month' },
+  { value: '3_months', label: 'Within 3 months' },
+  { value: '6_months', label: 'Within 6 months' },
   { value: 'flexible', label: 'Flexible' }
 ]
 
@@ -67,7 +67,7 @@ async function handleSubmit() {
 
     success.value = true
   } catch (err) {
-    error.value = err.response?.data?.error || 'Error al enviar la solicitud. Intente nuevamente.'
+    error.value = err.response?.data?.error || 'Error sending the request. Please try again.'
   } finally {
     loading.value = false
   }
@@ -83,9 +83,9 @@ function handleFileChange(e) {
     <!-- Hero -->
     <section class="bg-primary-900 text-white py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl md:text-5xl font-display font-bold">Solicitar Cotización</h1>
+        <h1 class="text-4xl md:text-5xl font-display font-bold">Request a Quote</h1>
         <p class="mt-4 text-lg text-primary-200 max-w-2xl">
-          Cuéntanos sobre tu proyecto y recibirás una cotización personalizada sin compromiso.
+          Tell us about your project and you'll receive a personalized no-commitment quote.
         </p>
       </div>
     </section>
@@ -97,13 +97,13 @@ function handleFileChange(e) {
           <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
             <CheckCircleIcon class="h-10 w-10 text-green-500" />
           </div>
-          <h2 class="mt-4 text-2xl font-bold text-gray-900">¡Solicitud Enviada!</h2>
+          <h2 class="mt-4 text-2xl font-bold text-gray-900">Request Sent!</h2>
           <p class="mt-2 text-gray-600">
-            Hemos recibido tu solicitud de cotización. Revisa tu email para la confirmación.
-            Nos pondremos en contacto contigo a la brevedad.
+            We have received your quote request. Check your email for confirmation.
+            We will get in touch with you shortly.
           </p>
           <router-link to="/" class="btn-primary mt-6 inline-flex">
-            Volver al inicio
+            Back to Home
           </router-link>
         </div>
 
@@ -113,11 +113,11 @@ function handleFileChange(e) {
             {{ error }}
           </div>
 
-          <h2 class="text-xl font-bold text-gray-900">Información de Contacto</h2>
+          <h2 class="text-xl font-bold text-gray-900">Contact Information</h2>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label class="label">Nombre completo *</label>
+              <label class="label">Full name *</label>
               <input v-model="form.name" type="text" required class="input" />
             </div>
 
@@ -127,24 +127,24 @@ function handleFileChange(e) {
             </div>
 
             <div>
-              <label class="label">Teléfono *</label>
+              <label class="label">Phone *</label>
               <input v-model="form.phone" type="tel" required class="input" />
             </div>
 
             <div>
-              <label class="label">Dirección del proyecto</label>
-              <input v-model="form.address" type="text" class="input" placeholder="Ciudad, Estado" />
+              <label class="label">Project address</label>
+              <input v-model="form.address" type="text" class="input" placeholder="City, State" />
             </div>
           </div>
 
           <hr class="my-8" />
 
-          <h2 class="text-xl font-bold text-gray-900">Detalles del Proyecto</h2>
+          <h2 class="text-xl font-bold text-gray-900">Project Details</h2>
 
           <div>
-            <label class="label">Tipo de servicio *</label>
+            <label class="label">Service type *</label>
             <select v-model="form.serviceType" required class="input">
-              <option value="">Seleccione una opción</option>
+              <option value="">Select an option</option>
               <option v-for="type in serviceTypes" :key="type.value" :value="type.value">
                 {{ type.label }}
               </option>
@@ -153,9 +153,9 @@ function handleFileChange(e) {
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label class="label">Presupuesto estimado</label>
+              <label class="label">Estimated budget</label>
               <select v-model="form.budget" class="input">
-                <option value="">Seleccione una opción</option>
+                <option value="">Select an option</option>
                 <option v-for="option in budgetOptions" :key="option.value" :value="option.value">
                   {{ option.label }}
                 </option>
@@ -163,9 +163,9 @@ function handleFileChange(e) {
             </div>
 
             <div>
-              <label class="label">Línea de tiempo</label>
+              <label class="label">Timeline</label>
               <select v-model="form.timeline" class="input">
-                <option value="">Seleccione una opción</option>
+                <option value="">Select an option</option>
                 <option v-for="option in timelineOptions" :key="option.value" :value="option.value">
                   {{ option.label }}
                 </option>
@@ -174,18 +174,18 @@ function handleFileChange(e) {
           </div>
 
           <div>
-            <label class="label">Descripción del proyecto *</label>
+            <label class="label">Project description *</label>
             <textarea
               v-model="form.description"
               rows="5"
               required
               class="input"
-              placeholder="Describe tu proyecto: tamaño del área, características deseadas, problemas actuales, etc."
+              placeholder="Describe your project: area size, desired features, current issues, etc."
             ></textarea>
           </div>
 
           <div>
-            <label class="label">Adjuntar archivos (opcional)</label>
+            <label class="label">Attach files (optional)</label>
             <input
               type="file"
               multiple
@@ -194,14 +194,14 @@ function handleFileChange(e) {
               class="input"
             />
             <p class="text-sm text-gray-500 mt-1">
-              Sube fotos del área, planos o imágenes de referencia (máx. 5 archivos)
+              Upload photos of the area, blueprints or reference images (max. 5 files)
             </p>
           </div>
 
           <div class="bg-primary-50 p-4 rounded-lg">
             <p class="text-sm text-primary-800">
-              <strong>Nota:</strong> Tu información es confidencial y solo será utilizada para
-              preparar tu cotización. Nos pondremos en contacto en un plazo de 24-48 horas hábiles.
+              <strong>Note:</strong> Your information is confidential and will only be used to
+              prepare your quote. We will contact you within 24-48 business hours.
             </p>
           </div>
 
@@ -210,8 +210,8 @@ function handleFileChange(e) {
             :disabled="loading"
             class="btn-primary w-full"
           >
-            <span v-if="loading">Enviando solicitud...</span>
-            <span v-else>Enviar Solicitud de Cotización</span>
+            <span v-if="loading">Sending request...</span>
+            <span v-else>Submit Quote Request</span>
           </button>
         </form>
       </div>

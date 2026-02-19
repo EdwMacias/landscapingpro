@@ -9,17 +9,15 @@ import { RouterLink } from 'vue-router'
         <!-- Brand -->
         <div class="col-span-1 md:col-span-2">
           <div class="flex items-center space-x-2 mb-4">
-            <div class="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center">
-              <span class="text-white font-bold text-xl">D&D</span>
-            </div>
+            <img src="/logo puro.png" alt="D&D Landscaping Pro" class="h-10 w-10 object-contain" />
             <div>
               <span class="text-xl font-display font-bold">Landscaping</span>
               <span class="text-primary-400 font-semibold ml-1">Pro</span>
             </div>
           </div>
           <p class="text-gray-400 max-w-md">
-            Transformamos espacios exteriores en obras de arte naturales.
-            Servicios profesionales de paisajismo y jardinería en el sur de Florida.
+            Transforming outdoor spaces into natural works of art.
+            Professional landscaping and gardening services in South Florida.
           </p>
           <div class="mt-4 flex space-x-4">
             <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors">
@@ -39,26 +37,26 @@ import { RouterLink } from 'vue-router'
 
         <!-- Quick Links -->
         <div>
-          <h3 class="text-sm font-semibold uppercase tracking-wider mb-4">Enlaces</h3>
+          <h3 class="text-sm font-semibold uppercase tracking-wider mb-4">Links</h3>
           <ul class="space-y-2">
             <li>
               <RouterLink to="/" class="text-gray-400 hover:text-primary-400 transition-colors">
-                Inicio
+                Home
               </RouterLink>
             </li>
             <li>
               <RouterLink to="/proyectos" class="text-gray-400 hover:text-primary-400 transition-colors">
-                Proyectos
+                Projects
               </RouterLink>
             </li>
             <li>
               <RouterLink to="/galeria" class="text-gray-400 hover:text-primary-400 transition-colors">
-                Galería
+                Gallery
               </RouterLink>
             </li>
             <li>
               <RouterLink to="/nosotros" class="text-gray-400 hover:text-primary-400 transition-colors">
-                Nosotros
+                About Us
               </RouterLink>
             </li>
           </ul>
@@ -66,17 +64,17 @@ import { RouterLink } from 'vue-router'
 
         <!-- Contact -->
         <div>
-          <h3 class="text-sm font-semibold uppercase tracking-wider mb-4">Contacto</h3>
+          <h3 class="text-sm font-semibold uppercase tracking-wider mb-4">Contact</h3>
           <ul class="space-y-2 text-gray-400">
             <li>Miami, Florida</li>
             <li>
-              <a href="tel:+13051234567" class="hover:text-primary-400 transition-colors">
-                (305) 123-4567
+              <a href="tel:+14072672978" class="hover:text-primary-400 transition-colors">
+                (407) 267-2978
               </a>
             </li>
             <li>
-              <a href="mailto:info@ddlandscaping.com" class="hover:text-primary-400 transition-colors">
-                info@ddlandscaping.com
+              <a href="mailto:infolandscaping@ddlandscapingpro.com" class="hover:text-primary-400 transition-colors">
+                infolandscaping@ddlandscapingpro.com
               </a>
             </li>
           </ul>
@@ -84,7 +82,7 @@ import { RouterLink } from 'vue-router'
       </div>
 
       <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
-        <p>&copy; {{ new Date().getFullYear() }} D&D Landscaping Pro. Todos los derechos reservados.</p>
+        <p>&copy; {{ new Date().getFullYear() }} D&D Landscaping Pro. All rights reserved.</p>
       </div>
     </div>
   </footer>

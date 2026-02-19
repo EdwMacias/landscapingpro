@@ -2,43 +2,34 @@
 import { RouterLink } from 'vue-router'
 import { CheckCircleIcon } from '@heroicons/vue/24/solid'
 
-const team = [
-  {
-    name: 'David Martinez',
-    role: 'Fundador & Director',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400',
-    bio: 'Con más de 15 años en el sector del paisajismo, David lidera cada proyecto con pasión y dedicación.'
-  },
-  {
-    name: 'Diana Rodríguez',
-    role: 'Diseñadora de Paisajes',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400',
-    bio: 'Especialista en diseño sostenible y jardines nativos de Florida.'
-  },
-  {
-    name: 'Carlos Hernández',
-    role: 'Jefe de Operaciones',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400',
-    bio: 'Supervisa todos los proyectos garantizando la más alta calidad en cada detalle.'
-  }
+const services = [
+  { icon: '✂️', title: 'General Landscape Maintenance' },
+  { icon: '💧', title: 'Irrigation System Services' },
+  { icon: '🌿', title: 'Trimming and Shrub Care' },
+  { icon: '🌱', title: 'Weed Control (Planting Beds)' },
+  { icon: '🌾', title: 'Lawn Weed Control' },
+  { icon: '🌲', title: 'Tree Pruning and Maintenance' },
+  { icon: '🧪', title: 'Fertilization Programs' },
+  { icon: '🏡', title: 'Landscape Installations' },
+  { icon: '🌸', title: 'Garden and Landscape Design' }
 ]
 
 const values = [
   {
-    title: 'Calidad',
-    description: 'Utilizamos solo los mejores materiales y técnicas en cada proyecto.'
+    title: 'Quality',
+    description: 'We use professional standards and proper techniques on every project.'
   },
   {
-    title: 'Compromiso',
-    description: 'Nos comprometemos con cada cliente hasta lograr su satisfacción total.'
+    title: 'Reliability',
+    description: 'Consistent processes and attention to detail you can count on, every time.'
   },
   {
-    title: 'Sostenibilidad',
-    description: 'Promovemos prácticas ecológicas y el uso de plantas nativas.'
+    title: 'Integrity',
+    description: 'Transparent communication and honest service on every job we take.'
   },
   {
-    title: 'Innovación',
-    description: 'Constantemente actualizamos nuestras técnicas y diseños.'
+    title: 'Results',
+    description: 'Healthy, well-maintained outdoor spaces that protect long-term property value.'
   }
 ]
 </script>
@@ -55,61 +46,80 @@ const values = [
         />
       </div>
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-4xl md:text-5xl font-display font-bold">Sobre Nosotros</h1>
+        <h1 class="text-4xl md:text-5xl font-display font-bold">About Us</h1>
         <p class="mt-4 text-lg text-primary-200 max-w-2xl mx-auto">
-          Conoce la historia, misión y el equipo detrás de D&D Landscaping Pro
+          Learn about the company, mission, and team behind D&D Landscaping Pro LLC
         </p>
       </div>
     </section>
 
-    <!-- Story -->
+    <!-- About / Story -->
     <section class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 class="section-title">Nuestra Historia</h2>
-            <div class="mt-6 space-y-4 text-gray-600">
+            <h2 class="section-title">Who We Are</h2>
+            <div class="mt-6 space-y-4 text-gray-600 text-lg leading-relaxed">
               <p>
-                D&D Landscaping Pro nació en 2014 con una visión clara: transformar espacios exteriores
-                en verdaderas obras de arte naturales que mejoren la calidad de vida de nuestros clientes.
+                D&D Landscaping Pro LLC is a professional landscaping company focused on reliable
+                landscape maintenance and outdoor care for residential and commercial properties.
               </p>
               <p>
-                Lo que comenzó como un pequeño negocio familiar en Miami se ha convertido en una de las
-                empresas de paisajismo más respetadas del sur de Florida, sirviendo a cientos de clientes
-                residenciales y comerciales.
-              </p>
-              <p>
-                Nuestro nombre, D&D, representa los nombres de nuestros fundadores, David y Diana,
-                quienes siguen involucrados en cada proyecto, asegurando que cada espacio que creamos
-                refleje nuestra pasión por la naturaleza y el diseño.
+                We work with technical standards, consistent processes, and attention to detail to
+                deliver clean, healthy, and well-maintained outdoor spaces our clients can trust.
               </p>
             </div>
           </div>
           <div class="relative">
             <img
               src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800"
-              alt="Nuestro trabajo"
+              alt="Our work"
               class="rounded-xl shadow-xl"
             />
             <div class="absolute -bottom-6 -right-6 bg-accent-500 text-white p-6 rounded-xl shadow-lg hidden md:block">
               <div class="text-4xl font-bold">500+</div>
-              <div>Proyectos completados</div>
+              <div>Projects completed</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Values -->
+    <!-- Services -->
     <section class="py-20 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <h2 class="section-title">Nuestros Valores</h2>
+        <div class="text-center mb-12">
+          <h2 class="section-title">Our Services</h2>
           <p class="section-subtitle mx-auto">
-            Los principios que guían cada decisión y cada proyecto que emprendemos.
+            Comprehensive landscaping solutions for residential and commercial properties.
           </p>
         </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            v-for="service in services"
+            :key="service.title"
+            class="flex items-start gap-4 bg-white p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
+          >
+            <span class="text-3xl flex-shrink-0">{{ service.icon }}</span>
+            <p class="text-gray-800 font-medium leading-snug">{{ service.title }}</p>
+          </div>
+        </div>
+        <p class="mt-10 text-center text-gray-500 max-w-2xl mx-auto">
+          Our services are performed using professional standards, proper techniques, and reliable
+          processes to ensure consistent results, landscape health, and long-term property value.
+        </p>
+      </div>
+    </section>
 
+    <!-- Values -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h2 class="section-title">Our Values</h2>
+          <p class="section-subtitle mx-auto">
+            The principles that guide every decision and every project we take on.
+          </p>
+        </div>
         <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div v-for="value in values" :key="value.title" class="text-center">
             <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -122,26 +132,28 @@ const values = [
       </div>
     </section>
 
-    <!-- Team -->
-    <section class="py-20 bg-white">
+    <!-- Team / Founder -->
+    <section class="py-20 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <h2 class="section-title">Nuestro Equipo</h2>
+        <div class="text-center mb-12">
+          <h2 class="section-title">Our Leadership</h2>
           <p class="section-subtitle mx-auto">
-            Profesionales apasionados que hacen posible cada transformación.
+            The person driving our commitment to excellence every day.
           </p>
         </div>
-
-        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div v-for="member in team" :key="member.name" class="text-center">
+        <div class="flex justify-center">
+          <div class="bg-white rounded-2xl shadow-lg p-8 text-center max-w-sm w-full">
             <img
-              :src="member.image"
-              :alt="member.name"
-              class="w-32 h-32 rounded-full mx-auto object-cover shadow-lg"
+              src="/founder.jpeg"
+              alt="Diego Peñaranda"
+              class="w-36 h-36 rounded-full mx-auto object-cover shadow-lg border-4 border-primary-100"
             />
-            <h3 class="mt-4 text-xl font-semibold text-gray-900">{{ member.name }}</h3>
-            <p class="text-primary-600 font-medium">{{ member.role }}</p>
-            <p class="mt-2 text-gray-600">{{ member.bio }}</p>
+            <h3 class="mt-6 text-2xl font-semibold text-gray-900">Diego Peñaranda</h3>
+            <p class="text-primary-600 font-medium mt-1">Founder & CEO</p>
+            <p class="mt-4 text-gray-600 leading-relaxed">
+              Leading D&D Landscaping Pro LLC with a focus on professionalism, reliability,
+              and delivering outdoor spaces that clients can truly be proud of.
+            </p>
           </div>
         </div>
       </div>
@@ -153,19 +165,19 @@ const values = [
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
             <div class="text-4xl md:text-5xl font-bold text-accent-400">10+</div>
-            <div class="mt-2 text-primary-200">Años de experiencia</div>
+            <div class="mt-2 text-primary-200">Years of experience</div>
           </div>
           <div>
             <div class="text-4xl md:text-5xl font-bold text-accent-400">500+</div>
-            <div class="mt-2 text-primary-200">Proyectos completados</div>
+            <div class="mt-2 text-primary-200">Projects completed</div>
           </div>
           <div>
             <div class="text-4xl md:text-5xl font-bold text-accent-400">98%</div>
-            <div class="mt-2 text-primary-200">Clientes satisfechos</div>
+            <div class="mt-2 text-primary-200">Satisfied clients</div>
           </div>
           <div>
-            <div class="text-4xl md:text-5xl font-bold text-accent-400">25+</div>
-            <div class="mt-2 text-primary-200">Profesionales</div>
+            <div class="text-4xl md:text-5xl font-bold text-accent-400">9</div>
+            <div class="mt-2 text-primary-200">Services offered</div>
           </div>
         </div>
       </div>
@@ -175,13 +187,13 @@ const values = [
     <section class="py-16 bg-accent-500">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-3xl font-display font-bold text-white">
-          ¿Listo para trabajar con nosotros?
+          Ready to work with us?
         </h2>
         <p class="mt-4 text-accent-100">
-          Contáctanos hoy y descubre cómo podemos transformar tu espacio exterior.
+          Contact us today and discover how we can transform your outdoor space.
         </p>
         <RouterLink to="/cotizacion" class="btn bg-white text-accent-700 hover:bg-gray-100 mt-6">
-          Solicitar Cotización Gratis
+          Get a Free Quote
         </RouterLink>
       </div>
     </section>

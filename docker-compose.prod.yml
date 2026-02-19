@@ -38,7 +38,7 @@ services:
       - EMAIL_USER=${EMAIL_USER}
       - EMAIL_PASS=${EMAIL_PASS}
       - EMAIL_FROM=${EMAIL_FROM}
-      - FRONTEND_URL=${FRONTEND_URL:-https://dd.sistemaafiliado.online}
+      - FRONTEND_URL=${FRONTEND_URL:-https://www.ddlandscapingpro.com}
     depends_on:
       mongodb:
         condition: service_healthy
@@ -54,8 +54,8 @@ services:
         - VITE_API_URL=${VITE_API_URL:-/api}
     container_name: ddland-frontend
     restart: unless-stopped
-    expose:
-      - "80"
+    ports:
+      - "16262:80"
     depends_on:
       - backend
     networks:

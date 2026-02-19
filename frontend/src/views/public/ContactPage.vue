@@ -39,7 +39,7 @@ async function handleSubmit() {
     Object.assign(form, { name: '', email: '', phone: '', message: '' })
     files.value = []
   } catch (err) {
-    error.value = err.response?.data?.error || 'Error al enviar el mensaje. Intente nuevamente.'
+    error.value = err.response?.data?.error || 'Error sending the message. Please try again.'
   } finally {
     loading.value = false
   }
@@ -55,9 +55,9 @@ function handleFileChange(e) {
     <!-- Hero -->
     <section class="bg-primary-900 text-white py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl md:text-5xl font-display font-bold">Contacto</h1>
+        <h1 class="text-4xl md:text-5xl font-display font-bold">Contact</h1>
         <p class="mt-4 text-lg text-primary-200 max-w-2xl">
-          Estamos aquí para ayudarte. Contáctanos y te responderemos a la brevedad.
+          We're here to help. Contact us and we'll get back to you as soon as possible.
         </p>
       </div>
     </section>
@@ -67,7 +67,7 @@ function handleFileChange(e) {
         <div class="grid md:grid-cols-2 gap-12">
           <!-- Contact Info -->
           <div>
-            <h2 class="text-2xl font-bold text-gray-900 mb-6">Información de Contacto</h2>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h2>
 
             <div class="space-y-6">
               <div class="flex items-start">
@@ -75,7 +75,7 @@ function handleFileChange(e) {
                   <MapPinIcon class="h-6 w-6 text-primary-600" />
                 </div>
                 <div class="ml-4">
-                  <h3 class="font-semibold text-gray-900">Dirección</h3>
+                  <h3 class="font-semibold text-gray-900">Address</h3>
                   <p class="text-gray-600">123 Landscaping Way<br>Miami, FL 33101</p>
                 </div>
               </div>
@@ -85,9 +85,9 @@ function handleFileChange(e) {
                   <PhoneIcon class="h-6 w-6 text-primary-600" />
                 </div>
                 <div class="ml-4">
-                  <h3 class="font-semibold text-gray-900">Teléfono</h3>
+                  <h3 class="font-semibold text-gray-900">Phone</h3>
                   <p class="text-gray-600">
-                    <a href="tel:+13051234567" class="hover:text-primary-600">(305) 123-4567</a>
+                    <a href="tel:+14072672978" class="hover:text-primary-600">(407) 267-2978</a>
                   </p>
                 </div>
               </div>
@@ -98,9 +98,12 @@ function handleFileChange(e) {
                 </div>
                 <div class="ml-4">
                   <h3 class="font-semibold text-gray-900">Email</h3>
-                  <p class="text-gray-600">
-                    <a href="mailto:info@ddlandscaping.com" class="hover:text-primary-600">
-                      info@ddlandscaping.com
+                  <p class="text-gray-600 space-y-1">
+                    <a href="mailto:infolandscaping@ddlandscapingpro.com" class="block hover:text-primary-600">
+                      infolandscaping@ddlandscapingpro.com
+                    </a>
+                    <a href="mailto:diegopenaranda@ddlandscapingpro.com" class="block hover:text-primary-600">
+                      diegopenaranda@ddlandscapingpro.com
                     </a>
                   </p>
                 </div>
@@ -111,10 +114,10 @@ function handleFileChange(e) {
                   <ClockIcon class="h-6 w-6 text-primary-600" />
                 </div>
                 <div class="ml-4">
-                  <h3 class="font-semibold text-gray-900">Horario de Atención</h3>
+                  <h3 class="font-semibold text-gray-900">Business Hours</h3>
                   <p class="text-gray-600">
-                    Lunes - Viernes: 8:00 AM - 6:00 PM<br>
-                    Sábado: 9:00 AM - 2:00 PM
+                    Monday - Friday: 8:00 AM - 6:00 PM<br>
+                    Saturday: 9:00 AM - 2:00 PM
                   </p>
                 </div>
               </div>
@@ -136,13 +139,13 @@ function handleFileChange(e) {
 
           <!-- Contact Form -->
           <div class="bg-white rounded-xl shadow-lg p-8">
-            <h2 class="text-2xl font-bold text-gray-900 mb-6">Envíanos un Mensaje</h2>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
 
             <div v-if="success" class="mb-6 p-4 bg-green-50 rounded-lg flex items-start">
               <CheckCircleIcon class="h-6 w-6 text-green-500 flex-shrink-0" />
               <div class="ml-3">
-                <h3 class="text-green-800 font-semibold">¡Mensaje enviado!</h3>
-                <p class="text-green-700">Gracias por contactarnos. Te responderemos pronto.</p>
+                <h3 class="text-green-800 font-semibold">Message sent!</h3>
+                <p class="text-green-700">Thank you for contacting us. We'll get back to you soon.</p>
               </div>
             </div>
 
@@ -152,7 +155,7 @@ function handleFileChange(e) {
               </div>
 
               <div>
-                <label class="label">Nombre completo *</label>
+                <label class="label">Full name *</label>
                 <input v-model="form.name" type="text" required class="input" />
               </div>
 
@@ -162,23 +165,23 @@ function handleFileChange(e) {
               </div>
 
               <div>
-                <label class="label">Teléfono</label>
+                <label class="label">Phone</label>
                 <input v-model="form.phone" type="tel" class="input" />
               </div>
 
               <div>
-                <label class="label">Mensaje *</label>
+                <label class="label">Message *</label>
                 <textarea
                   v-model="form.message"
                   rows="5"
                   required
                   class="input"
-                  placeholder="¿En qué podemos ayudarte?"
+                  placeholder="How can we help you?"
                 ></textarea>
               </div>
 
               <div>
-                <label class="label">Adjuntar archivos (opcional)</label>
+                <label class="label">Attach files (optional)</label>
                 <input
                   type="file"
                   multiple
@@ -186,7 +189,7 @@ function handleFileChange(e) {
                   @change="handleFileChange"
                   class="input"
                 />
-                <p class="text-sm text-gray-500 mt-1">Imágenes o PDFs (máx. 5 archivos)</p>
+                <p class="text-sm text-gray-500 mt-1">Images or PDFs (max. 5 files)</p>
               </div>
 
               <button
@@ -194,8 +197,8 @@ function handleFileChange(e) {
                 :disabled="loading"
                 class="btn-primary w-full"
               >
-                <span v-if="loading">Enviando...</span>
-                <span v-else>Enviar Mensaje</span>
+                <span v-if="loading">Sending...</span>
+                <span v-else>Send Message</span>
               </button>
             </form>
           </div>

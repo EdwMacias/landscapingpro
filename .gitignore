@@ -95,3 +95,5 @@ temp/
 .turbo/
 DEVELOPMENT.md
 PRODUCTION.md
+docker-compose.prod.yml
+NGINX-PROXY-MANAGER-SETUP.md

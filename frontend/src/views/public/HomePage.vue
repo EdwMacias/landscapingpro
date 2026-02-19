@@ -10,44 +10,44 @@ const loading = ref(true)
 
 const services = [
   {
-    title: 'Diseño de Jardines',
-    description: 'Creamos espacios verdes únicos que reflejan tu estilo y complementan tu hogar.',
+    title: 'Garden Design',
+    description: 'We create unique green spaces that reflect your style and complement your home.',
     icon: '🌸'
   },
   {
-    title: 'Paisajismo',
-    description: 'Transformamos terrenos en paisajes impresionantes con diseños profesionales.',
+    title: 'Landscaping',
+    description: 'We transform land into impressive landscapes with professional designs.',
     icon: '🌳'
   },
   {
-    title: 'Mantenimiento',
-    description: 'Servicio regular para mantener tu jardín en perfectas condiciones todo el año.',
+    title: 'Maintenance',
+    description: 'Regular service to keep your garden in perfect condition all year round.',
     icon: '✂️'
   },
   {
-    title: 'Sistemas de Riego',
-    description: 'Instalación de sistemas de irrigación eficientes y automatizados.',
+    title: 'Irrigation Systems',
+    description: 'Installation of efficient and automated irrigation systems.',
     icon: '💧'
   },
   {
     title: 'Hardscaping',
-    description: 'Construcción de patios, caminos y estructuras decorativas en piedra.',
+    description: 'Construction of patios, walkways and decorative stone structures.',
     icon: '🧱'
   },
   {
-    title: 'Poda de Árboles',
-    description: 'Cuidado profesional y mantenimiento de árboles y arbustos.',
+    title: 'Tree Pruning',
+    description: 'Professional care and maintenance of trees and shrubs.',
     icon: '🌲'
   }
 ]
 
 const features = [
-  'Más de 10 años de experiencia',
-  'Equipo profesional certificado',
-  'Materiales de primera calidad',
-  'Garantía en todos nuestros trabajos',
-  'Presupuestos sin compromiso',
-  'Atención personalizada'
+  'Over 10 years of experience',
+  'Certified professional team',
+  'Top-quality materials',
+  'Guarantee on all our work',
+  'No-commitment estimates',
+  'Personalized attention'
 ]
 
 onMounted(async () => {
@@ -78,19 +78,19 @@ onMounted(async () => {
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
         <div class="max-w-3xl">
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight animate-fade-in">
-            Transformamos tu espacio exterior en un
-            <span class="text-accent-400">paraíso verde</span>
+            We transform your outdoor space into a
+            <span class="text-accent-400">green paradise</span>
           </h1>
           <p class="mt-6 text-lg md:text-xl text-primary-100 animate-fade-in" style="animation-delay: 0.2s">
-            Servicios profesionales de paisajismo y jardinería en el sur de Florida.
-            Diseñamos, construimos y mantenemos espacios exteriores excepcionales.
+            Professional landscaping and gardening services in South Florida.
+            We design, build and maintain exceptional outdoor spaces.
           </p>
           <div class="mt-8 flex flex-col sm:flex-row gap-4 animate-fade-in" style="animation-delay: 0.4s">
             <RouterLink to="/cotizacion" class="btn-accent text-lg px-8">
-              Solicitar Cotización Gratis
+              Get a Free Quote
             </RouterLink>
             <RouterLink to="/proyectos" class="btn-secondary bg-transparent border-white text-white hover:bg-white hover:text-primary-800">
-              Ver Proyectos
+              View Projects
             </RouterLink>
           </div>
         </div>
@@ -102,9 +102,9 @@ onMounted(async () => {
     <section class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
-          <h2 class="section-title">Nuestros Servicios</h2>
+          <h2 class="section-title">Our Services</h2>
           <p class="section-subtitle mx-auto">
-            Ofrecemos una gama completa de servicios de paisajismo para transformar cualquier espacio exterior.
+            We offer a complete range of landscaping services to transform any outdoor space.
           </p>
         </div>
         <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -129,11 +129,11 @@ onMounted(async () => {
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-end mb-12">
           <div>
-            <h2 class="section-title">Proyectos Destacados</h2>
-            <p class="section-subtitle">Algunos de nuestros trabajos más recientes</p>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Some of our most recent work</p>
           </div>
           <RouterLink to="/proyectos" class="hidden md:flex items-center text-primary-600 font-semibold hover:text-primary-700">
-            Ver todos
+            View all
             <ArrowRightIcon class="ml-2 h-5 w-5" />
           </RouterLink>
         </div>
@@ -180,7 +180,7 @@ onMounted(async () => {
 
         <div class="mt-8 text-center md:hidden">
           <RouterLink to="/proyectos" class="btn-primary">
-            Ver todos los proyectos
+            View all projects
           </RouterLink>
         </div>
       </div>
@@ -191,9 +191,9 @@ onMounted(async () => {
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 class="section-title">¿Por qué elegirnos?</h2>
+            <h2 class="section-title">Why choose us?</h2>
             <p class="section-subtitle">
-              En D&D Landscaping Pro nos comprometemos con la excelencia en cada proyecto que emprendemos.
+              At D&D Landscaping Pro we are committed to excellence in every project we undertake.
             </p>
             <ul class="mt-8 space-y-4">
               <li v-for="feature in features" :key="feature" class="flex items-start">
@@ -202,19 +202,19 @@ onMounted(async () => {
               </li>
             </ul>
             <RouterLink to="/nosotros" class="btn-primary mt-8 inline-flex">
-              Conoce más sobre nosotros
+              Learn more about us
             </RouterLink>
           </div>
           <div class="relative">
             <img
               src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800"
-              alt="Equipo de trabajo"
+              alt="Our team at work"
               class="rounded-xl shadow-2xl"
               loading="lazy"
             />
             <div class="absolute -bottom-6 -left-6 bg-primary-600 text-white p-6 rounded-xl shadow-lg">
               <div class="text-4xl font-bold">10+</div>
-              <div class="text-primary-100">Años de experiencia</div>
+              <div class="text-primary-100">Years of experience</div>
             </div>
           </div>
         </div>
@@ -225,9 +225,9 @@ onMounted(async () => {
     <section class="py-20 bg-primary-900 text-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
-          <h2 class="section-title text-white">Lo que dicen nuestros clientes</h2>
+          <h2 class="section-title text-white">What our clients say</h2>
           <p class="section-subtitle text-primary-200 mx-auto">
-            La satisfacción de nuestros clientes es nuestra mejor carta de presentación.
+            Our clients' satisfaction is our best presentation card.
           </p>
         </div>
 
@@ -263,17 +263,17 @@ onMounted(async () => {
     <section class="py-20 bg-accent-500">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-3xl md:text-4xl font-display font-bold text-white">
-          ¿Listo para transformar tu espacio?
+          Ready to transform your space?
         </h2>
         <p class="mt-4 text-lg text-accent-100 max-w-2xl mx-auto">
-          Contáctanos hoy para una consulta gratuita y descubre cómo podemos hacer realidad el jardín de tus sueños.
+          Contact us today for a free consultation and discover how we can make your dream garden a reality.
         </p>
         <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
           <RouterLink to="/cotizacion" class="btn bg-white text-accent-700 hover:bg-gray-100">
-            Solicitar Cotización
+            Request a Quote
           </RouterLink>
           <RouterLink to="/contacto" class="btn border-2 border-white text-white hover:bg-white hover:text-accent-700">
-            Contactar
+            Contact Us
           </RouterLink>
         </div>
       </div>

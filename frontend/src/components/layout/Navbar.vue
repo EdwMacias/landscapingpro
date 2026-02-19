@@ -7,11 +7,11 @@ const route = useRoute()
 const isMenuOpen = ref(false)
 
 const navigation = [
-  { name: 'Inicio', to: '/' },
-  { name: 'Proyectos', to: '/proyectos' },
-  { name: 'Galería', to: '/galeria' },
-  { name: 'Nosotros', to: '/nosotros' },
-  { name: 'Contacto', to: '/contacto' }
+  { name: 'Home', to: '/' },
+  { name: 'Projects', to: '/proyectos' },
+  { name: 'Gallery', to: '/galeria' },
+  { name: 'About Us', to: '/nosotros' },
+  { name: 'Contact', to: '/contacto' }
 ]
 
 function isActive(path) {
@@ -27,9 +27,7 @@ function isActive(path) {
         <!-- Logo -->
         <div class="flex items-center">
           <RouterLink to="/" class="flex items-center space-x-2">
-            <div class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
-              <span class="text-white font-bold text-xl">D&D</span>
-            </div>
+            <img src="/logo puro.png" alt="D&D Landscaping Pro" class="h-10 w-10 object-contain" />
             <div class="hidden sm:block">
               <span class="text-xl font-display font-bold text-gray-900">Landscaping</span>
               <span class="text-primary-600 font-semibold ml-1">Pro</span>
@@ -53,7 +51,7 @@ function isActive(path) {
             {{ item.name }}
           </RouterLink>
           <RouterLink to="/cotizacion" class="btn-primary text-sm">
-            Solicitar Cotización
+            Get a Free Quote
           </RouterLink>
         </div>
 
@@ -100,7 +98,7 @@ function isActive(path) {
             @click="isMenuOpen = false"
             class="block btn-primary text-center mt-4"
           >
-            Solicitar Cotización
+            Get a Free Quote
           </RouterLink>
         </div>
       </div>

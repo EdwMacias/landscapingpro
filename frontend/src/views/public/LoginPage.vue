@@ -46,8 +46,8 @@ async function handleSubmit() {
             <span class="text-primary-600 font-semibold ml-1">Pro</span>
           </div>
         </router-link>
-        <h2 class="mt-6 text-2xl font-bold text-gray-900">Panel de Administración</h2>
-        <p class="mt-2 text-gray-600">Ingresa tus credenciales para continuar</p>
+        <h2 class="mt-6 text-2xl font-bold text-gray-900">Administration Panel</h2>
+        <p class="mt-2 text-gray-600">Enter your credentials to continue</p>
       </div>
 
       <!-- Form -->
@@ -64,13 +64,13 @@ async function handleSubmit() {
               type="email"
               required
               class="input"
-              placeholder="tu@email.com"
+              placeholder="your@email.com"
               autocomplete="email"
             />
           </div>
 
           <div>
-            <label class="label">Contraseña</label>
+            <label class="label">Password</label>
             <input
               v-model="form.password"
               type="password"
@@ -86,15 +86,15 @@ async function handleSubmit() {
             :disabled="loading"
             class="btn-primary w-full"
           >
-            <span v-if="loading">Iniciando sesión...</span>
-            <span v-else>Iniciar Sesión</span>
+            <span v-if="loading">Signing in...</span>
+            <span v-else>Sign In</span>
           </button>
         </form>
       </div>
 
       <p class="mt-8 text-center text-sm text-gray-500">
         <router-link to="/" class="text-primary-600 hover:text-primary-700">
-          ← Volver al sitio
+          ← Back to site
         </router-link>
       </p>
     </div>

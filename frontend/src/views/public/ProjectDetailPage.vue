@@ -60,7 +60,7 @@ function prevImage() {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <RouterLink to="/proyectos" class="inline-flex items-center text-primary-200 hover:text-white mb-4">
             <ArrowLeftIcon class="h-5 w-5 mr-2" />
-            Volver a proyectos
+            Back to projects
           </RouterLink>
           <h1 class="text-4xl md:text-5xl font-display font-bold">
             {{ projectsStore.currentProject.title }}
@@ -122,14 +122,14 @@ function prevImage() {
       <!-- Description -->
       <section class="py-12 bg-gray-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-2xl font-bold text-gray-900 mb-6">Descripción del Proyecto</h2>
+          <h2 class="text-2xl font-bold text-gray-900 mb-6">Project Description</h2>
           <div class="prose prose-lg max-w-none text-gray-600">
             <p>{{ projectsStore.currentProject.description }}</p>
           </div>
 
           <!-- Tags -->
           <div v-if="projectsStore.currentProject.tags?.length" class="mt-8">
-            <h3 class="text-lg font-semibold text-gray-900 mb-3">Etiquetas</h3>
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Tags</h3>
             <div class="flex flex-wrap gap-2">
               <span
                 v-for="tag in projectsStore.currentProject.tags"
@@ -146,10 +146,10 @@ function prevImage() {
       <!-- CTA -->
       <section class="py-12 bg-primary-600 text-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 class="text-2xl font-bold">¿Te gustaría un proyecto similar?</h2>
-          <p class="mt-2 text-primary-100">Contáctanos para una cotización gratuita</p>
+          <h2 class="text-2xl font-bold">Would you like a similar project?</h2>
+          <p class="mt-2 text-primary-100">Contact us for a free quote</p>
           <RouterLink to="/cotizacion" class="btn bg-white text-primary-700 hover:bg-gray-100 mt-6">
-            Solicitar Cotización
+            Request a Quote
           </RouterLink>
         </div>
       </section>

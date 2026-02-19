@@ -54,9 +54,9 @@ function closeLightbox() {
     <!-- Hero -->
     <section class="bg-primary-900 text-white py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl md:text-5xl font-display font-bold">Galería</h1>
+        <h1 class="text-4xl md:text-5xl font-display font-bold">Gallery</h1>
         <p class="mt-4 text-lg text-primary-200 max-w-2xl">
-          Explora nuestra colección de imágenes y descubre la belleza de nuestros trabajos de paisajismo.
+          Explore our collection of images and discover the beauty of our landscaping work.
         </p>
       </div>
     </section>
@@ -74,7 +74,7 @@ function closeLightbox() {
                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
             ]"
           >
-            Todas
+            All
           </button>
           <button
             v-for="cat in categoriesStore.categories"
@@ -101,7 +101,7 @@ function closeLightbox() {
         </div>
 
         <div v-else-if="images.length === 0" class="text-center py-12">
-          <p class="text-gray-500 text-lg">No hay imágenes en esta categoría.</p>
+          <p class="text-gray-500 text-lg">No images in this category.</p>
         </div>
 
         <div v-else class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">

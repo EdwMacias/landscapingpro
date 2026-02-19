@@ -41,9 +41,9 @@ async function loadMore() {
     <!-- Hero -->
     <section class="bg-primary-900 text-white py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl md:text-5xl font-display font-bold">Nuestros Proyectos</h1>
+        <h1 class="text-4xl md:text-5xl font-display font-bold">Our Projects</h1>
         <p class="mt-4 text-lg text-primary-200 max-w-2xl">
-          Explora nuestra colección de proyectos completados. Cada trabajo refleja nuestro compromiso con la excelencia.
+          Explore our collection of completed projects. Each job reflects our commitment to excellence.
         </p>
       </div>
     </section>
@@ -58,7 +58,7 @@ async function loadMore() {
             <input
               v-model="searchQuery"
               type="text"
-              placeholder="Buscar proyectos..."
+              placeholder="Search projects..."
               class="input pl-10"
             />
           </div>
@@ -67,7 +67,7 @@ async function loadMore() {
           <div class="flex items-center gap-2 w-full md:w-auto">
             <FunnelIcon class="h-5 w-5 text-gray-400" />
             <select v-model="selectedCategory" class="input">
-              <option value="">Todas las categorías</option>
+              <option value="">All categories</option>
               <option v-for="cat in categoriesStore.categories" :key="cat._id" :value="cat._id">
                 {{ cat.name }}
               </option>
@@ -91,7 +91,7 @@ async function loadMore() {
         </div>
 
         <div v-else-if="projectsStore.projects.length === 0" class="text-center py-12">
-          <p class="text-gray-500 text-lg">No se encontraron proyectos.</p>
+          <p class="text-gray-500 text-lg">No projects found.</p>
         </div>
 
         <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -117,7 +117,7 @@ async function loadMore() {
                   v-if="project.status === 'in_progress'"
                   class="bg-accent-500 text-white text-sm px-3 py-1 rounded-full"
                 >
-                  En progreso
+                  In progress
                 </span>
               </div>
             </div>
@@ -141,7 +141,7 @@ async function loadMore() {
           class="mt-12 text-center"
         >
           <button @click="loadMore" class="btn-secondary">
-            Cargar más proyectos
+            Load more projects
           </button>
         </div>
       </div>
