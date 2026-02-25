@@ -76,7 +76,7 @@ function handleFileChange(e) {
                 </div>
                 <div class="ml-4">
                   <h3 class="font-semibold text-gray-900">Address</h3>
-                  <p class="text-gray-600">123 Landscaping Way<br>Miami, FL 33101</p>
+                  <p class="text-gray-600">8883 fort Jefferson boulevard<br>Orlando, FL 32822</p>
                 </div>
               </div>
 
@@ -99,9 +99,7 @@ function handleFileChange(e) {
                 <div class="ml-4">
                   <h3 class="font-semibold text-gray-900">Email</h3>
                   <p class="text-gray-600 space-y-1">
-                    <a href="mailto:infolandscaping@ddlandscapingpro.com" class="block hover:text-primary-600">
-                      infolandscaping@ddlandscapingpro.com
-                    </a>
+                    <!-- <a href="mailto:infolandscaping@ddlandscapingpro.com" class="block hover:text-primary-600">infolandscaping@ddlandscapingpro.com</a> -->
                     <a href="mailto:diegopenaranda@ddlandscapingpro.com" class="block hover:text-primary-600">
                       diegopenaranda@ddlandscapingpro.com
                     </a>
@@ -126,7 +124,7 @@ function handleFileChange(e) {
             <!-- Map placeholder -->
             <div class="mt-8 h-64 bg-gray-200 rounded-xl overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d229119.77082894592!2d-80.34971784453983!3d25.782390733805886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b0a20ec8c111%3A0xff96f271ddad4f65!2sMiami%2C%20FL!5e0!3m2!1sen!2sus!4v1"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.9209839481978!2d-81.271985922865!3d28.481926175747486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e763f43a18dd75%3A0x8eb2c3e8a3915bb0!2s8883%20Fort%20Jefferson%20Blvd%2C%20Orlando%2C%20FL%2032822%2C%20EE.%20UU.!5e0!3m2!1ses!2sco!4v1772030243150!5m2!1ses!2sco"
                 width="100%"
                 height="100%"
                 style="border:0"

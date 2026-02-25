@@ -73,8 +73,8 @@ landscapingpro/
 - CTA final
 
 ### `ContactPage.vue`
-- Información de contacto: dirección Miami FL, teléfono `(407) 267-2978`, dos emails (`infolandscaping@ddlandscapingpro.com`, `diegopenaranda@ddlandscapingpro.com`), horarios de atención
-- Mapa embebido de Google Maps (Miami, FL)
+- Información de contacto: dirección Orlando FL, teléfono `(407) 267-2978`, dos emails (`infolandscaping@ddlandscapingpro.com`, `diegopenaranda@ddlandscapingpro.com`), horarios de atención
+- Mapa embebido de Google Maps (Orlando, FL)
 - Formulario de contacto: nombre, email, teléfono, mensaje, adjuntos (imagen/PDF)
 - Envío vía API con manejo de éxito y error
 - Subida de archivos via `multipart/form-data`
@@ -134,7 +134,7 @@ landscapingpro/
 - Logo + descripción de la empresa
 - Links de redes sociales (Facebook, Instagram — íconos SVG)
 - Links rápidos: Home, Projects, Gallery, About Us
-- Información de contacto: Miami FL, teléfono, email
+- Información de contacto: Orlando FL, teléfono, email
 - Copyright dinámico con `new Date().getFullYear()`
 
 ---
@@ -247,7 +247,7 @@ VITE_API_URL
 | Teléfono | (407) 267-2978 |
 | Email info | infolandscaping@ddlandscapingpro.com |
 | Email directo | diegopenaranda@ddlandscapingpro.com |
-| Ubicación | Miami, Florida |
+| Ubicación | Orlando, Florida |
 | Servicios | 9 servicios especializados de paisajismo |
 | Idioma del sitio | Inglés (sitio público) |
 

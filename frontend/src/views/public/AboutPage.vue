@@ -77,7 +77,7 @@ const values = [
               class="rounded-xl shadow-xl"
             />
             <div class="absolute -bottom-6 -right-6 bg-accent-500 text-white p-6 rounded-xl shadow-lg hidden md:block">
-              <div class="text-4xl font-bold">50+</div>
+              <div class="text-4xl font-bold">20+</div>
               <div>Projects completed</div>
             </div>
           </div>
@@ -168,7 +168,7 @@ const values = [
             <div class="mt-2 text-primary-200">Years of experience</div>
           </div>
           <div>
-            <div class="text-4xl md:text-5xl font-bold text-accent-400">50+</div>
+            <div class="text-4xl md:text-5xl font-bold text-accent-400">20+</div>
             <div class="mt-2 text-primary-200">Projects completed</div>
           </div>
           <div>

@@ -42,7 +42,7 @@ const services = [
 ]
 
 const features = [
-  'Over 10 years of experience',
+  'Over 5 years of experience',
   'Certified professional team',
   'Top-quality materials',
   'Guarantee on all our work',
@@ -213,7 +213,7 @@ onMounted(async () => {
               loading="lazy"
             />
             <div class="absolute -bottom-6 -left-6 bg-primary-600 text-white p-6 rounded-xl shadow-lg">
-              <div class="text-4xl font-bold">10+</div>
+              <div class="text-4xl font-bold">5+</div>
               <div class="text-primary-100">Years of experience</div>
             </div>
           </div>

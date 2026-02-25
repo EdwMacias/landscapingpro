@@ -198,7 +198,7 @@ async function handleSubmit() {
 
           <div>
             <label class="label">Ubicación</label>
-            <input v-model="form.location" type="text" class="input" placeholder="Ej: Miami, FL" />
+            <input v-model="form.location" type="text" class="input" placeholder="Ej: Orlando, FL" />
           </div>
         </div>
 

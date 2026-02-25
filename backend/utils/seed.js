@@ -95,7 +95,7 @@ const seedData = async () => {
           { url: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800', isFeatured: true },
           { url: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800' }
         ],
-        location: 'Miami, FL',
+        location: 'Orlando, FL',
         status: 'completed',
         featured: true,
         tags: ['moderno', 'zen', 'residencial'],
@@ -169,7 +169,7 @@ const seedData = async () => {
         content: 'Excelente trabajo en nuestro jardín. El equipo fue muy profesional y el resultado superó nuestras expectativas. Totalmente recomendados.',
         rating: 5,
         project: projects[0]._id,
-        location: 'Miami, FL',
+        location: 'Orlando, FL',
         status: 'approved',
         featured: true
       },

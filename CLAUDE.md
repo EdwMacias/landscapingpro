@@ -62,3 +62,78 @@ Organiza el proyecto con:
 5. Ejemplos de datos seed
 
 Prioriza un diseño moderno, limpio y profesional que inspire confianza. Usa componentes reutilizables y código bien documentado.
+
+---
+
+## Entorno de Producción — Estado Actual
+
+### Identidad del Cliente
+
+| Campo | Valor |
+|-------|-------|
+| Empresa | D&D Landscaping Pro LLC |
+| Fundador | Diego Peñaranda |
+| Teléfono | (407) 267-2978 |
+| Email info | infolandscaping@ddlandscapingpro.com |
+| Email directo | diegopenaranda@ddlandscapingpro.com |
+| Ubicación | Orlando, Florida |
+| Idioma del sitio | Inglés (todo el sitio público está en inglés) |
+
+### Docker — Reglas Importantes
+
+- **NUNCA exponer puertos al exterior** con `0.0.0.0`. Todos los servicios deben ser solo internos o usar `127.0.0.1`.
+- El frontend (`ddland-frontend`) se conecta a la red externa `scoobydoo` para que el **Nginx Proxy Manager** (`desktop-app-1`) lo pueda alcanzar por nombre de contenedor (`ddland-frontend:80`).
+- **No usar `ports:`** en el frontend, usar `expose:` + red `scoobydoo`.
+- La red `scoobydoo` es **external: true** — ya existe en el host, no crearla.
+- **Usar `docker-compose` (v1.29.2)** para gestionar este proyecto, NO `docker compose` (v2). El v2 tiene incompatibilidades con las imágenes actuales (naming con guiones vs underscores).
+
+### Comandos de Producción
+
+```bash
+# Levantar producción (sin rebuild)
+docker-compose -f docker-compose.prod.yml up -d --no-build
+
+# Bajar producción
+docker-compose -f docker-compose.prod.yml down
+
+# Rebuild del frontend (tras cambios en código)
+docker-compose -f docker-compose.prod.yml build --no-cache frontend
+docker-compose -f docker-compose.prod.yml up -d --no-build
+
+# Rebuild del backend (tras cambios en código)
+docker-compose -f docker-compose.prod.yml build --no-cache backend
+docker-compose -f docker-compose.prod.yml up -d --no-build
+
+# Ver estado de contenedores
+docker ps --filter "name=ddland"
+```
+
+### Contenedores del Proyecto
+
+| Contenedor | Imagen | Puerto | Acceso |
+|------------|--------|--------|--------|
+| `ddland-frontend` | `landscapingpro_frontend` | 80 (interno) | Via red `scoobydoo` → NPM |
+| `ddland-backend` | `landscapingpro_backend` | 8767 (interno) | Solo red `ddland-network` |
+| `ddland-mongodb` | `mongo:7` | 27017 (interno) | Solo red `ddland-network` |
+
+### Redes Docker
+
+| Red | Tipo | Uso |
+|-----|------|-----|
+| `landscapingpro_ddland-network` | bridge (interna) | Comunicación frontend ↔ backend ↔ mongodb |
+| `scoobydoo` | bridge (external) | Expone el frontend al Nginx Proxy Manager |
+
+### Otros Proyectos en el Mismo Host
+
+El host corre múltiples proyectos bajo el mismo Nginx Proxy Manager (`desktop-app-1`):
+- `inventorycheck-modern-*` — todos en `127.0.0.1` (no expuestos)
+- `cedac-frontend` — puerto 3000 expuesto
+- `desktop-portainer-1` — gestión de contenedores
+
+### Nota sobre el Error de Red al Bajar Producción
+
+Al ejecutar `docker-compose down`, aparece el error:
+```
+error while removing network: network landscapingpro_ddland-network has active endpoints
+```
+Esto es **normal e inofensivo** — ocurre porque la red `scoobydoo` tiene otros contenedores conectados. Los contenedores de ddland se detienen y eliminan correctamente.

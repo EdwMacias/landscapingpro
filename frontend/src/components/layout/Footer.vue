@@ -5,7 +5,7 @@ import { RouterLink } from 'vue-router'
 <template>
   <footer class="bg-gray-900 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Brand -->
         <div class="col-span-1 md:col-span-2">
           <div class="flex items-center space-x-2 mb-4">
@@ -66,15 +66,15 @@ import { RouterLink } from 'vue-router'
         <div>
           <h3 class="text-sm font-semibold uppercase tracking-wider mb-4">Contact</h3>
           <ul class="space-y-2 text-gray-400">
-            <li>Miami, Florida</li>
+            <li>Orlando, Florida</li>
             <li>
               <a href="tel:+14072672978" class="hover:text-primary-400 transition-colors">
                 (407) 267-2978
               </a>
             </li>
             <li>
-              <a href="mailto:infolandscaping@ddlandscapingpro.com" class="hover:text-primary-400 transition-colors">
-                infolandscaping@ddlandscapingpro.com
+              <a href="mailto:diegopenaranda@ddlandscapingpro.com" class="hover:text-primary-400 transition-colors break-all">
+                diegopenaranda@ddlandscapingpro.com
               </a>
             </li>
           </ul>
