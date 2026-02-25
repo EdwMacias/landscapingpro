@@ -77,7 +77,7 @@ const values = [
               class="rounded-xl shadow-xl"
             />
             <div class="absolute -bottom-6 -right-6 bg-accent-500 text-white p-6 rounded-xl shadow-lg hidden md:block">
-              <div class="text-4xl font-bold">500+</div>
+              <div class="text-4xl font-bold">50+</div>
               <div>Projects completed</div>
             </div>
           </div>
@@ -164,11 +164,11 @@ const values = [
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
-            <div class="text-4xl md:text-5xl font-bold text-accent-400">10+</div>
+            <div class="text-4xl md:text-5xl font-bold text-accent-400">5+</div>
             <div class="mt-2 text-primary-200">Years of experience</div>
           </div>
           <div>
-            <div class="text-4xl md:text-5xl font-bold text-accent-400">500+</div>
+            <div class="text-4xl md:text-5xl font-bold text-accent-400">50+</div>
             <div class="mt-2 text-primary-200">Projects completed</div>
           </div>
           <div>
