@@ -50,6 +50,11 @@ const router = createRouter({
       ]
     },
     {
+      path: '/survey/:token',
+      name: 'survey',
+      component: () => import('@/views/public/SurveyPage.vue')
+    },
+    {
       path: '/login',
       name: 'login',
       component: () => import('@/views/public/LoginPage.vue')

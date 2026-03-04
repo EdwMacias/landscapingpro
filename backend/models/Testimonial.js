@@ -40,6 +40,14 @@ const testimonialSchema = new mongoose.Schema({
   featured: {
     type: Boolean,
     default: false
+  },
+  quote: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Quote'
+  },
+  surveyLink: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'SurveyLink'
   }
 }, {
   timestamps: true
