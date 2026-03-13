@@ -18,32 +18,32 @@ const router = createRouter({
           component: HomePage
         },
         {
-          path: 'proyectos',
+          path: 'projects',
           name: 'projects',
           component: () => import('@/views/public/ProjectsPage.vue')
         },
         {
-          path: 'proyectos/:slug',
+          path: 'projects/:slug',
           name: 'project-detail',
           component: () => import('@/views/public/ProjectDetailPage.vue')
         },
         {
-          path: 'galeria',
+          path: 'gallery',
           name: 'gallery',
           component: () => import('@/views/public/GalleryPage.vue')
         },
         {
-          path: 'nosotros',
+          path: 'about',
           name: 'about',
           component: () => import('@/views/public/AboutPage.vue')
         },
         {
-          path: 'contacto',
+          path: 'contact',
           name: 'contact',
           component: () => import('@/views/public/ContactPage.vue')
         },
         {
-          path: 'cotizacion',
+          path: 'quote',
           name: 'quote',
           component: () => import('@/views/public/QuotePage.vue')
         }

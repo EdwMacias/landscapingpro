@@ -98,7 +98,7 @@ async function loadMore() {
           <RouterLink
             v-for="project in projectsStore.projects"
             :key="project._id"
-            :to="`/proyectos/${project.slug}`"
+            :to="`/projects/${project.slug}`"
             class="card group hover:shadow-xl transition-all duration-300"
           >
             <div class="relative h-64 overflow-hidden">
@@ -106,7 +106,6 @@ async function loadMore() {
                 :src="project.images[0]?.url || 'https://via.placeholder.com/400x300'"
                 :alt="project.title"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               <div class="absolute bottom-4 left-4 flex gap-2">

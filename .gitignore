@@ -81,6 +81,7 @@ temp/
 *.temp
 *.bak
 *.cache
+test/
 
 # Package lock files (keep only one)
 # Uncomment based on your preference:
@@ -99,3 +100,5 @@ docker-compose.prod.yml
 NGINX-PROXY-MANAGER-SETUP.md
 CLAUDE.md
 docker-compose.prod.yml
+.claude/
+.claude

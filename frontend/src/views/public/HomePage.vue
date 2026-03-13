@@ -86,10 +86,10 @@ onMounted(async () => {
             We design, build and maintain exceptional outdoor spaces.
           </p>
           <div class="mt-8 flex flex-col sm:flex-row gap-4 animate-fade-in" style="animation-delay: 0.4s">
-            <RouterLink to="/cotizacion" class="btn-accent text-lg px-8">
+            <RouterLink to="/quote" class="btn-accent text-lg px-8">
               Get a Free Quote
             </RouterLink>
-            <RouterLink to="/proyectos" class="btn-secondary bg-transparent border-white text-white hover:bg-white hover:text-primary-800">
+            <RouterLink to="/projects" class="btn-secondary bg-transparent border-white text-white hover:bg-white hover:text-primary-800">
               View Projects
             </RouterLink>
           </div>
@@ -132,7 +132,7 @@ onMounted(async () => {
             <h2 class="section-title">Featured Projects</h2>
             <p class="section-subtitle">Some of our most recent work</p>
           </div>
-          <RouterLink to="/proyectos" class="hidden md:flex items-center text-primary-600 font-semibold hover:text-primary-700">
+          <RouterLink to="/projects" class="hidden md:flex items-center text-primary-600 font-semibold hover:text-primary-700">
             View all
             <ArrowRightIcon class="ml-2 h-5 w-5" />
           </RouterLink>
@@ -152,7 +152,7 @@ onMounted(async () => {
           <RouterLink
             v-for="project in featuredProjects"
             :key="project._id"
-            :to="`/proyectos/${project.slug}`"
+            :to="`/projects/${project.slug}`"
             class="card group hover:shadow-xl transition-shadow duration-300"
           >
             <div class="relative h-64 overflow-hidden">
@@ -160,7 +160,6 @@ onMounted(async () => {
                 :src="project.images[0]?.url || 'https://via.placeholder.com/400x300'"
                 :alt="project.title"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                loading="lazy"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               <span class="absolute bottom-4 left-4 bg-primary-600 text-white text-sm px-3 py-1 rounded-full">
@@ -179,7 +178,7 @@ onMounted(async () => {
         </div>
 
         <div class="mt-8 text-center md:hidden">
-          <RouterLink to="/proyectos" class="btn-primary">
+          <RouterLink to="/projects" class="btn-primary">
             View all projects
           </RouterLink>
         </div>
@@ -201,7 +200,7 @@ onMounted(async () => {
                 <span class="ml-3 text-gray-700">{{ feature }}</span>
               </li>
             </ul>
-            <RouterLink to="/nosotros" class="btn-primary mt-8 inline-flex">
+            <RouterLink to="/about" class="btn-primary mt-8 inline-flex">
               Learn more about us
             </RouterLink>
           </div>
@@ -210,7 +209,6 @@ onMounted(async () => {
               src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800"
               alt="Our team at work"
               class="rounded-xl shadow-2xl"
-              loading="lazy"
             />
             <div class="absolute -bottom-6 -left-6 bg-primary-600 text-white p-6 rounded-xl shadow-lg">
               <div class="text-4xl font-bold">5+</div>
@@ -269,10 +267,10 @@ onMounted(async () => {
           Contact us today for a free consultation and discover how we can make your dream garden a reality.
         </p>
         <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-          <RouterLink to="/cotizacion" class="btn bg-white text-accent-700 hover:bg-gray-100">
+          <RouterLink to="/quote" class="btn bg-white text-accent-700 hover:bg-gray-100">
             Request a Quote
           </RouterLink>
-          <RouterLink to="/contacto" class="btn border-2 border-white text-white hover:bg-white hover:text-accent-700">
+          <RouterLink to="/contact" class="btn border-2 border-white text-white hover:bg-white hover:text-accent-700">
             Contact Us
           </RouterLink>
         </div>

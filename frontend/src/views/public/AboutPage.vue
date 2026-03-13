@@ -192,7 +192,7 @@ const values = [
         <p class="mt-4 text-accent-100">
           Contact us today and discover how we can transform your outdoor space.
         </p>
-        <RouterLink to="/cotizacion" class="btn bg-white text-accent-700 hover:bg-gray-100 mt-6">
+        <RouterLink to="/quote" class="btn bg-white text-accent-700 hover:bg-gray-100 mt-6">
           Get a Free Quote
         </RouterLink>
       </div>

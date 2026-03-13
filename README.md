@@ -200,7 +200,6 @@ DELETE /api/projects/:id          # Eliminar proyecto
 ## Características Técnicas
 
 - Diseño 100% responsive (mobile-first)
-- Lazy loading de imágenes
 - Optimización automática de imágenes en Cloudinary
 - Validación de formularios (frontend y backend)
 - Manejo de errores robusto

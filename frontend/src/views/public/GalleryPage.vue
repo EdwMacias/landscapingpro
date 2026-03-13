@@ -115,7 +115,6 @@ function closeLightbox() {
               :src="image.image.url"
               :alt="image.title"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              loading="lazy"
             />
             <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-end">
               <div class="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">

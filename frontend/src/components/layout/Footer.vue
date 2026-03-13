@@ -45,17 +45,17 @@ import { RouterLink } from 'vue-router'
               </RouterLink>
             </li>
             <li>
-              <RouterLink to="/proyectos" class="text-gray-400 hover:text-primary-400 transition-colors">
+              <RouterLink to="/projects" class="text-gray-400 hover:text-primary-400 transition-colors">
                 Projects
               </RouterLink>
             </li>
             <li>
-              <RouterLink to="/galeria" class="text-gray-400 hover:text-primary-400 transition-colors">
+              <RouterLink to="/gallery" class="text-gray-400 hover:text-primary-400 transition-colors">
                 Gallery
               </RouterLink>
             </li>
             <li>
-              <RouterLink to="/nosotros" class="text-gray-400 hover:text-primary-400 transition-colors">
+              <RouterLink to="/about" class="text-gray-400 hover:text-primary-400 transition-colors">
                 About Us
               </RouterLink>
             </li>

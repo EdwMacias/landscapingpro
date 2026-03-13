@@ -8,10 +8,10 @@ const isMenuOpen = ref(false)
 
 const navigation = [
   { name: 'Home', to: '/' },
-  { name: 'Projects', to: '/proyectos' },
-  { name: 'Gallery', to: '/galeria' },
-  { name: 'About Us', to: '/nosotros' },
-  { name: 'Contact', to: '/contacto' }
+  { name: 'Projects', to: '/projects' },
+  { name: 'Gallery', to: '/gallery' },
+  { name: 'About Us', to: '/about' },
+  { name: 'Contact', to: '/contact' }
 ]
 
 function isActive(path) {
@@ -50,7 +50,7 @@ function isActive(path) {
           >
             {{ item.name }}
           </RouterLink>
-          <RouterLink to="/cotizacion" class="btn-primary text-sm">
+          <RouterLink to="/quote" class="btn-primary text-sm">
             Get a Free Quote
           </RouterLink>
         </div>
@@ -94,7 +94,7 @@ function isActive(path) {
             {{ item.name }}
           </RouterLink>
           <RouterLink
-            to="/cotizacion"
+            to="/quote"
             @click="isMenuOpen = false"
             class="block btn-primary text-center mt-4"
           >

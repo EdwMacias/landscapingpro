@@ -58,29 +58,23 @@ export const useProjectsStore = defineStore('projects', () => {
 
   async function createProject(formData) {
     try {
-      const response = await api.post('/projects', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' }
-      })
+      const response = await api.post('/projects', formData)
       return { success: true, data: response.data.data }
     } catch (error) {
-      return {
-        success: false,
-        error: error.response?.data?.error || 'Error al crear proyecto'
-      }
+      const data = error.response?.data
+      const msg = data?.error || (data?.errors?.map(e => e.message).join(', ')) || 'Error al crear proyecto'
+      return { success: false, error: msg }
     }
   }
 
   async function updateProject(id, formData) {
     try {
-      const response = await api.put(`/projects/${id}`, formData, {
-        headers: { 'Content-Type': 'multipart/form-data' }
-      })
+      const response = await api.put(`/projects/${id}`, formData)
       return { success: true, data: response.data.data }
     } catch (error) {
-      return {
-        success: false,
-        error: error.response?.data?.error || 'Error al actualizar proyecto'
-      }
+      const data = error.response?.data
+      const msg = data?.error || (data?.errors?.map(e => e.message).join(', ')) || 'Error al actualizar proyecto'
+      return { success: false, error: msg }
     }
   }
 

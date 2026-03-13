@@ -58,7 +58,7 @@ function prevImage() {
       <!-- Hero -->
       <section class="bg-primary-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <RouterLink to="/proyectos" class="inline-flex items-center text-primary-200 hover:text-white mb-4">
+          <RouterLink to="/projects" class="inline-flex items-center text-primary-200 hover:text-white mb-4">
             <ArrowLeftIcon class="h-5 w-5 mr-2" />
             Back to projects
           </RouterLink>
@@ -112,7 +112,6 @@ function prevImage() {
                 :src="image.url"
                 :alt="`${projectsStore.currentProject.title} - ${index + 1}`"
                 class="w-full h-full object-cover hover:opacity-80 transition-opacity"
-                loading="lazy"
               />
             </div>
           </div>
@@ -148,7 +147,7 @@ function prevImage() {
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 class="text-2xl font-bold">Would you like a similar project?</h2>
           <p class="mt-2 text-primary-100">Contact us for a free quote</p>
-          <RouterLink to="/cotizacion" class="btn bg-white text-primary-700 hover:bg-gray-100 mt-6">
+          <RouterLink to="/quote" class="btn bg-white text-primary-700 hover:bg-gray-100 mt-6">
             Request a Quote
           </RouterLink>
         </div>
