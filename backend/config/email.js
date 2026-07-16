@@ -108,6 +108,52 @@ const emailTemplates = {
     </div>
   `},
 
+  ticketNotification: (data) => `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+      <h2 style="color: #b91c1c;">Nueva queja / ticket registrado</h2>
+      <div style="background: #f5f5f5; padding: 20px; border-radius: 8px;">
+        <p><strong>Ticket:</strong> ${data.ticketNumber}</p>
+        <p><strong>Nombre:</strong> ${data.name}</p>
+        <p><strong>Dirección:</strong> ${data.address}</p>
+        <p><strong>Email:</strong> ${data.email}</p>
+        <p><strong>Teléfono:</strong> ${data.phone}</p>
+        ${data.subject ? `<p><strong>Asunto:</strong> ${data.subject}</p>` : ''}
+        <p><strong>Descripción:</strong></p>
+        <p style="background: white; padding: 15px; border-radius: 4px;">${data.description}</p>
+      </div>
+      <p style="color: #666; font-size: 12px; margin-top: 20px;">
+        Ticket recibido el ${new Date().toLocaleDateString('es-ES')} a través del formulario de quejas de D&D Landscaping Pro
+      </p>
+    </div>
+  `,
+
+  complaintInvitation: (data) => `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
+      <div style="background: #2d5016; padding: 30px 40px; text-align: center; border-radius: 8px 8px 0 0;">
+        <h1 style="color: #ffffff; margin: 0; font-size: 24px;">D&D Landscaping Pro</h1>
+        <p style="color: #a8c47a; margin: 8px 0 0 0; font-size: 14px;">Professional Landscaping Services</p>
+      </div>
+      <div style="background: #ffffff; padding: 40px; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 8px 8px;">
+        <p style="font-size: 18px; margin-top: 0;">Hi ${data.clientName},</p>
+        <p>We're sorry to hear you had an issue with our service. Please use the link below to file a formal complaint so our team can follow up and resolve it as soon as possible.</p>
+        <div style="text-align: center; margin: 35px 0;">
+          <a href="${data.complaintUrl}"
+             style="background: #2d5016; color: #ffffff; padding: 14px 32px; border-radius: 6px; text-decoration: none; font-size: 16px; font-weight: bold; display: inline-block;">
+            File a Complaint
+          </a>
+        </div>
+        <p style="color: #6b7280; font-size: 14px;">If the button above doesn't work, copy and paste this link into your browser:<br>
+          <a href="${data.complaintUrl}" style="color: #2d5016; word-break: break-all;">${data.complaintUrl}</a>
+        </p>
+        <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
+        <p style="color: #6b7280; font-size: 13px; margin: 0;">
+          D&D Landscaping Pro LLC &bull; Orlando, Florida<br>
+          (407) 267-2978 &bull; <a href="mailto:infolandscaping@ddlandscapingpro.com" style="color: #2d5016;">infolandscaping@ddlandscapingpro.com</a>
+        </p>
+      </div>
+    </div>
+  `,
+
   quoteConfirmation: (data) => `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
       <h2 style="color: #2d5016;">Gracias por su solicitud</h2>

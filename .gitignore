@@ -102,3 +102,5 @@ CLAUDE.md
 docker-compose.prod.yml
 .claude/
 .claude
+docs/
+docs-oficial/

@@ -60,6 +60,13 @@ import { RouterLink } from 'vue-router'
               </RouterLink>
             </li>
           </ul>
+
+          <RouterLink
+            to="/complaint"
+            class="mt-5 inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
+          >
+            File a Complaint
+          </RouterLink>
         </div>
 
         <!-- Contact -->

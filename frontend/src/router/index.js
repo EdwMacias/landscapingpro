@@ -46,6 +46,16 @@ const router = createRouter({
           path: 'quote',
           name: 'quote',
           component: () => import('@/views/public/QuotePage.vue')
+        },
+        {
+          path: 'complaint',
+          name: 'complaint',
+          component: () => import('@/views/public/ComplaintPage.vue')
+        },
+        {
+          path: 'ticket-status',
+          name: 'ticket-status',
+          component: () => import('@/views/public/TicketStatusPage.vue')
         }
       ]
     },
@@ -108,6 +118,11 @@ const router = createRouter({
           path: 'mensajes',
           name: 'admin-contacts',
           component: () => import('@/views/admin/ContactsPage.vue')
+        },
+        {
+          path: 'quejas',
+          name: 'admin-tickets',
+          component: () => import('@/views/admin/TicketsPage.vue')
         },
         {
           path: 'usuarios',

@@ -10,6 +10,7 @@ import {
   ChatBubbleLeftRightIcon,
   DocumentTextIcon,
   EnvelopeIcon,
+  ExclamationTriangleIcon,
   UsersIcon,
   Bars3Icon,
   XMarkIcon,
@@ -31,6 +32,7 @@ const navigation = computed(() => {
     { name: 'Categorías', to: '/admin/categorias', icon: TagIcon },
     { name: 'Testimonios', to: '/admin/testimonios', icon: ChatBubbleLeftRightIcon },
     { name: 'Cotizaciones', to: '/admin/cotizaciones', icon: DocumentTextIcon },
+    { name: 'Quejas', to: '/admin/quejas', icon: ExclamationTriangleIcon },
     { name: 'Mensajes', to: '/admin/mensajes', icon: EnvelopeIcon }
   ]
 

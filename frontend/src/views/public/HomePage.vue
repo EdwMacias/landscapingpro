@@ -92,6 +92,9 @@ onMounted(async () => {
             <RouterLink to="/projects" class="btn-secondary bg-transparent border-white text-white hover:bg-white hover:text-primary-800">
               View Projects
             </RouterLink>
+            <RouterLink to="/ticket-status" class="btn-secondary bg-transparent border-white text-white hover:bg-white hover:text-primary-800">
+              Track Your Complaint
+            </RouterLink>
           </div>
         </div>
       </div>

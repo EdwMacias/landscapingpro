@@ -52,6 +52,19 @@ exports.projectValidation = [
   body('category').notEmpty().withMessage('La categoría es requerida')
 ];
 
+// Ticket validators
+exports.ticketValidation = [
+  body('name').trim().notEmpty().withMessage('El nombre es requerido'),
+  body('address').trim().notEmpty().withMessage('La dirección es requerida'),
+  body('email').isEmail().withMessage('Email inválido'),
+  body('phone').trim().notEmpty().withMessage('El teléfono es requerido'),
+  body('description').trim().notEmpty().withMessage('La descripción del problema es requerida')
+    .isLength({ max: 2000 }).withMessage('La descripción no puede exceder 2000 caracteres'),
+  body('dataConsent')
+    .customSanitizer(value => value === true || value === 'true')
+    .custom(value => value === true).withMessage('Debe aceptar el uso de sus datos para continuar')
+];
+
 // Testimonial validators
 exports.testimonialValidation = [
   body('name').trim().notEmpty().withMessage('El nombre es requerido'),

@@ -7,7 +7,8 @@ import {
   FolderIcon,
   DocumentTextIcon,
   EnvelopeIcon,
-  ChatBubbleLeftRightIcon
+  ChatBubbleLeftRightIcon,
+  ExclamationTriangleIcon
 } from '@heroicons/vue/24/outline'
 
 const authStore = useAuthStore()
@@ -16,7 +17,8 @@ const stats = ref({
   projects: 0,
   quotes: 0,
   contacts: 0,
-  testimonials: 0
+  testimonials: 0,
+  openTickets: 0
 })
 
 const recentQuotes = ref([])
@@ -25,11 +27,12 @@ const loading = ref(true)
 
 onMounted(async () => {
   try {
-    const [quotesRes, contactsRes, projectsRes, testimonialsRes] = await Promise.all([
+    const [quotesRes, contactsRes, projectsRes, testimonialsRes, ticketsRes] = await Promise.all([
       api.get('/quotes/admin/all', { params: { limit: 5 } }),
       api.get('/contact/admin/all', { params: { limit: 5 } }),
       api.get('/projects/admin/all', { params: { limit: 1 } }),
-      api.get('/testimonials/admin/all', { params: { limit: 1 } })
+      api.get('/testimonials/admin/all', { params: { limit: 1 } }),
+      api.get('/tickets/admin/all', { params: { status: 'open', limit: 1 } })
     ])
 
     recentQuotes.value = quotesRes.data.data
@@ -38,7 +41,8 @@ onMounted(async () => {
       projects: projectsRes.data.pagination?.total || 0,
       quotes: quotesRes.data.pagination?.total || 0,
       contacts: contactsRes.data.pagination?.total || 0,
-      testimonials: testimonialsRes.data.pagination?.total || 0
+      testimonials: testimonialsRes.data.pagination?.total || 0,
+      openTickets: ticketsRes.data.pagination?.total || 0
     }
   } catch (error) {
     console.error('Error loading dashboard:', error)
@@ -58,7 +62,7 @@ onMounted(async () => {
     </div>
 
     <!-- Stats -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
       <div class="bg-white rounded-xl shadow p-6">
         <div class="flex items-center">
           <div class="p-3 bg-primary-100 rounded-lg">
@@ -103,6 +107,18 @@ onMounted(async () => {
           <div class="ml-4">
             <p class="text-sm text-gray-500">Testimonios</p>
             <p class="text-2xl font-bold text-gray-900">{{ stats.testimonials }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-6">
+        <div class="flex items-center">
+          <div class="p-3 bg-orange-100 rounded-lg">
+            <ExclamationTriangleIcon class="h-6 w-6 text-orange-600" />
+          </div>
+          <div class="ml-4">
+            <p class="text-sm text-gray-500">Quejas abiertas</p>
+            <p class="text-2xl font-bold text-gray-900">{{ stats.openTickets }}</p>
           </div>
         </div>
       </div>

@@ -68,7 +68,10 @@ export function getStatusLabel(status) {
     accepted: 'Aceptado',
     completed: 'Completado',
     planning: 'En planificación',
-    in_progress: 'En progreso'
+    in_progress: 'En progreso',
+    open: 'Abierto',
+    resolved: 'Resuelto',
+    closed: 'Cerrado'
   }
   return labels[status] || status
 }
@@ -87,7 +90,10 @@ export function getStatusColor(status) {
     archived: 'bg-gray-100 text-gray-800',
     reviewing: 'bg-yellow-100 text-yellow-800',
     quoted: 'bg-purple-100 text-purple-800',
-    accepted: 'bg-green-100 text-green-800'
+    accepted: 'bg-green-100 text-green-800',
+    open: 'bg-orange-100 text-orange-800',
+    resolved: 'bg-green-100 text-green-800',
+    closed: 'bg-gray-200 text-gray-700'
   }
   return colors[status] || 'bg-gray-100 text-gray-800'
 }
